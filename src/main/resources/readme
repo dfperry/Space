@@ -1,0 +1,26 @@
+User
+	Discovered galaxies
+	Explored Systems
+		Discovered planets
+	
+	Colonized planets
+		Structures
+			Production	
+				Ores / Resources
+				Fuel
+			Construction
+				Units
+				multiple constructors
+					build multiple structures at once
+					combine to increase construction speed
+			
+	
+	Research
+		Each planet has its own research facilities
+		research can be split up between facilities
+		
+Planets
+	Surveys
+		Ore locations
+		Resources can be depleted
+	
