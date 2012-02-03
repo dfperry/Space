@@ -1,5 +1,8 @@
 package com.dperry.space.model.space;
 
-public class Galaxy {
+import java.util.List;
 
+public class Galaxy extends SpaceObject {
+	
+	private List<SolarSystem> solarSystems;
 }
