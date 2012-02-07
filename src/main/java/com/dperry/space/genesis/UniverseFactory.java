@@ -3,6 +3,9 @@ package com.dperry.space.genesis;
 public class UniverseFactory {
 
 	// container sizes
+	private int gridHeight;
+	private int gridWidth;
+	
 	private boolean isGalaxyCountRandom;
 	private int galaxyCountMin;
 	private int galaxyCountMax;
@@ -83,5 +86,11 @@ public class UniverseFactory {
 	}
 	public void setPlanetTypeGasMin( int planetTypeGasMin ) {
 		this.planetTypeGasMin = planetTypeGasMin;
+	}
+	public void setGridHeight( int gridHeight ) {
+		this.gridHeight = gridHeight;
+	}
+	public void setGridWidth( int gridWidth ) {
+		this.gridWidth = gridWidth;
 	}
 }

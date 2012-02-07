@@ -9,6 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.dperry.space.genesis.PlanetFactory;
+import com.dperry.space.model.space.Planet;
+
 /**
  * Handles requests for the application home page.
  */
@@ -22,6 +25,22 @@ public class OverviewController {
 	public String home(Locale locale, Model model) {
 		
 		return "overview";
+	}
+	
+	@RequestMapping("/planettest")
+	public String viewPlanetTest( Model model ) {
+		
+		PlanetFactory planetFactory = new PlanetFactory();
+		planetFactory.setPlanetSizeMin( 10 );
+		planetFactory.setPlanetSizeMax( 40 );
+		planetFactory.setGridHeight( 400 );
+		planetFactory.setGridWidth( 600 );
+		
+		Planet planet = planetFactory.createPlanet();
+		
+		model.addAttribute( "planet", planet );
+		
+		return "planet";
 	}
 	
 }

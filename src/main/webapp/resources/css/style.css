@@ -1,0 +1,29 @@
+
+table {
+	border-collapse: collapse;
+}
+
+table.planet {
+	border: 3px solid #333333;
+}
+table.planet td {
+	margin: 0px;
+	border: 1px solid #333333;
+	padding: 0px;
+}
+div.plot {
+	width: 15px;
+	height: 15px;
+}
+
+div.water {
+	background-color: #6688aa;
+}
+
+div.gas {
+	background-color: #ff9900;
+}
+
+div.land {
+	background-color: #99aa00;
+}
