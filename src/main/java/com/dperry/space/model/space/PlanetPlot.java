@@ -1,5 +1,7 @@
 package com.dperry.space.model.space;
 
+import com.dperry.space.genesis.PlotType;
+
 public class PlanetPlot {
 
 	private int x;
@@ -9,10 +11,7 @@ public class PlanetPlot {
 	
 	private int oreCount = 0;
 	
-	private boolean isWater = false;
-	private boolean isGas = false;
-	private boolean isRock = true;
-	private boolean isLand = false;
+	PlotType plotType = PlotType.ROCK; 
 	
 	public int getX() {
 		return x;
@@ -38,28 +37,11 @@ public class PlanetPlot {
 	public void setOreCount( int oreCount ) {
 		this.oreCount = oreCount;
 	}
-	public boolean isWater() {
-		return isWater;
+	public PlotType getPlotType() {
+		return plotType;
 	}
-	public void setWater( boolean isWater ) {
-		this.isWater = isWater;
+	public void setPlotType( PlotType plotType ) {
+		this.plotType = plotType;
 	}
-	public boolean isGas() {
-		return isGas;
-	}
-	public void setGas( boolean isGas ) {
-		this.isGas = isGas;
-	}
-	public boolean isRock() {
-		return isRock;
-	}
-	public void setRock( boolean isRock ) {
-		this.isRock = isRock;
-	}
-	public boolean isLand() {
-		return isLand;
-	}
-	public void setLand( boolean isLand ) {
-		this.isLand = isLand;
-	}
+	
 }

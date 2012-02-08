@@ -39,7 +39,7 @@ public class PlanetFactory {
 		}
 		if( planet.getSize() > planetTypeWaterMin ) {
 			if( random.nextBoolean() ) {
-				planet.setPlanetType( PlanetType.MIX );
+				planet.setPlanetType( PlanetType.LAND );
 			}
 			else if ( random.nextBoolean() && random.nextBoolean() ) {
 				planet.setPlanetType( PlanetType.WATER );
@@ -51,7 +51,7 @@ public class PlanetFactory {
 
 		generatePlots( planet );
 		
-		if( planet.getPlanetType() == PlanetType.MIX ) {
+		if( planet.getPlanetType() == PlanetType.LAND ) {
 			generateOcean( planet );
 		}
 		
@@ -74,16 +74,16 @@ public class PlanetFactory {
 				
 				switch( planet.getPlanetType() ) {
 					case GAS:
-						plot.setGas( true );
+						plot.setPlotType( PlotType.GAS );
 						break;
 					case WATER:
-						plot.setWater( true );
+						plot.setPlotType( PlotType.WATER );
 						break;
 					case ROCK:
-						plot.setRock( true );
+						plot.setPlotType( PlotType.ROCK );
 						break;
-					case MIX:
-						plot.setLand( true );
+					case LAND:
+						plot.setPlotType( PlotType.LAND );
 				}
 				
 				plots.add( plot );
@@ -152,7 +152,9 @@ public class PlanetFactory {
 		// set water on plots
 		for( int i = 0; i < height; i++ ) {
 			for( int j = 0; j < width; j++ ) {
-				planet.getPlanetPlot( j, i ).setWater( ocean[i][j] );
+				if( ocean[i][j] ) {
+					planet.getPlanetPlot( j, i ).setPlotType( PlotType.WATER );
+				}
 			}
 		}
 	}

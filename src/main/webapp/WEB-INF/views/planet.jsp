@@ -30,7 +30,7 @@
 				PlanetPlot plot = planet.getPlanetPlot(j,i); %>
 				
 				<td>
-					<div class="plot <%=( plot.isWater() ? "water" : ( plot.isGas() ? "gas" : (plot.isLand() ? "land" : (plot.isRock() ? "rock" : "")) ) ) %><%=random.nextInt(4) %>" >
+					<div class="plot <%= plot.getPlotType().toString() %><%=random.nextInt(4) %>" >
 						&nbsp;
 					</div>
 				</td>
