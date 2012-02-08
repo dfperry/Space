@@ -1,6 +1,7 @@
 package com.dperry.space.genesis;
 
 public enum PlanetType {
+	MIX("mix"),
 	ROCK("rock"),
 	GAS("gas"),
 	WATER("water");

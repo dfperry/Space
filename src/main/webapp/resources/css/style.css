@@ -19,11 +19,75 @@ div.plot {
 div.water {
 	background-color: #6688aa;
 }
+div.water0 {
+	background-color: #7088aa;
+}
+div.water1 {
+	background-color: #6088aa;
+}
+div.water2 {
+	background-color: #6680aa;
+}
+div.water3 {
+	background-color: #6688a0;
+}
+div.water4 {
+	background-color: #6088a0;
+}
 
 div.gas {
 	background-color: #ff9900;
 }
+div.gas0 {
+	background-color: #ffaa00;
+}
+div.gas1 {
+	background-color: #ff9909;
+}
+div.gas2 {
+	background-color: #ff9000;
+}
+div.gas3 {
+	background-color: #f09900;
+}
+div.gas4 {
+	background-color: #f09909;
+}
+
+div.rock {
+	background-color: #aa5500;
+}
+div.rock0 {
+	background-color: #aa5500;
+}
+div.rock1 {
+	background-color: #a05500;
+}
+div.rock2 {
+	background-color: #aa5000;
+}
+div.rock3 {
+	background-color: #a05000;
+}
+div.rock4 {
+	background-color: #aa5510;
+}
 
 div.land {
 	background-color: #99aa00;
+}
+div.land0 {
+	background-color: #90aa00;
+}
+div.land1 {
+	background-color: #99a000;
+}
+div.land2 {
+	background-color: #99aa20;
+}
+div.land3 {
+	background-color: #90a000;
+}
+div.land4 {
+	background-color: #99bb00;
 }

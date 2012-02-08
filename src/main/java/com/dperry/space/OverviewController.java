@@ -32,9 +32,11 @@ public class OverviewController {
 		
 		PlanetFactory planetFactory = new PlanetFactory();
 		planetFactory.setPlanetSizeMin( 10 );
-		planetFactory.setPlanetSizeMax( 40 );
+		planetFactory.setPlanetSizeMax( 50 );
 		planetFactory.setGridHeight( 400 );
 		planetFactory.setGridWidth( 600 );
+		planetFactory.setPlanetTypeGasMin( 35 );
+		planetFactory.setPlanetTypeWaterMin( 20 );
 		
 		Planet planet = planetFactory.createPlanet();
 		

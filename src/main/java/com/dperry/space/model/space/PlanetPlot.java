@@ -11,6 +11,9 @@ public class PlanetPlot {
 	
 	private boolean isWater = false;
 	private boolean isGas = false;
+	private boolean isRock = true;
+	private boolean isLand = false;
+	
 	public int getX() {
 		return x;
 	}
@@ -47,7 +50,16 @@ public class PlanetPlot {
 	public void setGas( boolean isGas ) {
 		this.isGas = isGas;
 	}
-	
-	
-	
+	public boolean isRock() {
+		return isRock;
+	}
+	public void setRock( boolean isRock ) {
+		this.isRock = isRock;
+	}
+	public boolean isLand() {
+		return isLand;
+	}
+	public void setLand( boolean isLand ) {
+		this.isLand = isLand;
+	}
 }

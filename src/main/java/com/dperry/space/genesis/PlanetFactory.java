@@ -31,10 +31,29 @@ public class PlanetFactory {
 		planet.setX( random.nextInt( gridWidth ) );
 		planet.setY( random.nextInt( gridHeight ) );
 		planet.setSize( random.nextInt( planetSizeMax - planetSizeMin + 1 ) + planetSizeMin );
+		
+		planet.setPlanetType( PlanetType.ROCK );
+		
+		if( planet.getSize() > planetTypeWaterMin && random.nextBoolean() && random.nextBoolean() ) {
+			planet.setPlanetType( PlanetType.WATER );
+		}
+		if( planet.getSize() > planetTypeWaterMin ) {
+			if( random.nextBoolean() ) {
+				planet.setPlanetType( PlanetType.MIX );
+			}
+			else if ( random.nextBoolean() && random.nextBoolean() ) {
+				planet.setPlanetType( PlanetType.WATER );
+			}
+		}
+		if( planet.getSize() > planetTypeGasMin && random.nextBoolean() && random.nextBoolean() ) {
+			planet.setPlanetType( PlanetType.GAS );
+		}
 
 		generatePlots( planet );
 		
-		generateOcean( planet );
+		if( planet.getPlanetType() == PlanetType.MIX ) {
+			generateOcean( planet );
+		}
 		
 		generateOre( planet );
 
@@ -52,6 +71,20 @@ public class PlanetFactory {
 				PlanetPlot plot = new PlanetPlot();
 				plot.setX( j );
 				plot.setY( i );	
+				
+				switch( planet.getPlanetType() ) {
+					case GAS:
+						plot.setGas( true );
+						break;
+					case WATER:
+						plot.setWater( true );
+						break;
+					case ROCK:
+						plot.setRock( true );
+						break;
+					case MIX:
+						plot.setLand( true );
+				}
 				
 				plots.add( plot );
 			}

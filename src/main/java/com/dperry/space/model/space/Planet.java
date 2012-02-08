@@ -2,9 +2,13 @@ package com.dperry.space.model.space;
 
 import java.util.List;
 
+import com.dperry.space.genesis.PlanetType;
+
 public class Planet extends SpaceObject {
 
 	int size;
+	
+	PlanetType planetType;
 	
 	List<PlanetPlot> planetPlots;
 	
@@ -47,6 +51,10 @@ public class Planet extends SpaceObject {
 	public void setPlanetPlots( List<PlanetPlot> planetPlots ) {
 		this.planetPlots = planetPlots;
 	}
-	
-	
+	public PlanetType getPlanetType() {
+		return planetType;
+	}
+	public void setPlanetType( PlanetType planetType ) {
+		this.planetType = planetType;
+	}
 }
