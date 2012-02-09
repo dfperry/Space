@@ -2,7 +2,6 @@ package com.dperry.space.model.space;
 
 import java.util.List;
 
-import com.dperry.space.genesis.PlanetType;
 
 public class Planet extends SpaceObject {
 

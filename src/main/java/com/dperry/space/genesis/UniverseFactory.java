@@ -29,8 +29,13 @@ public class UniverseFactory {
 	private int planetTypeGasMin;
 	
 	// factories
-	PlanetFactory planetFactory;
+	private GalaxyFactory galaxyFactory;
+	private SolarSystemFactory solarSystemFactory;
+	private PlanetFactory planetFactory;
 	
+	public UniverseFactory() {
+		
+	}
 	
 	public void spark() {
 		
@@ -92,5 +97,80 @@ public class UniverseFactory {
 	}
 	public void setGridWidth( int gridWidth ) {
 		this.gridWidth = gridWidth;
+	}
+	public GalaxyFactory getGalaxyFactory() {
+		return galaxyFactory;
+	}
+	public void setGalaxyFactory( GalaxyFactory galaxyFactory ) {
+		this.galaxyFactory = galaxyFactory;
+	}
+	public SolarSystemFactory getSolarSystemFactory() {
+		return solarSystemFactory;
+	}
+	public void setSolarSystemFactory( SolarSystemFactory solarSystemFactory ) {
+		this.solarSystemFactory = solarSystemFactory;
+	}
+	public PlanetFactory getPlanetFactory() {
+		return planetFactory;
+	}
+	public void setPlanetFactory( PlanetFactory planetFactory ) {
+		this.planetFactory = planetFactory;
+	}
+	public int getGridHeight() {
+		return gridHeight;
+	}
+	public int getGridWidth() {
+		return gridWidth;
+	}
+	public boolean isGalaxyCountRandom() {
+		return isGalaxyCountRandom;
+	}
+	public int getGalaxyCountMin() {
+		return galaxyCountMin;
+	}
+	public int getGalaxyCountMax() {
+		return galaxyCountMax;
+	}
+	public boolean isSolarsystemCountRandom() {
+		return isSolarsystemCountRandom;
+	}
+	public int getSolarsystemCountMin() {
+		return solarsystemCountMin;
+	}
+	public int getSolarsystemCountMax() {
+		return solarsystemCountMax;
+	}
+	public boolean isIsplanetCountRandom() {
+		return isplanetCountRandom;
+	}
+	public int getPlanetCountMin() {
+		return planetCountMin;
+	}
+	public int getPlanetCountMax() {
+		return planetCountMax;
+	}
+	public int getPlanetOreMin() {
+		return planetOreMin;
+	}
+	public int getPlanetOreMax() {
+		return planetOreMax;
+	}
+	public int getPlanetWaterMin() {
+		return planetWaterMin;
+	}
+	public int getPlanetWaterMax() {
+		return planetWaterMax;
+	}
+	public int getPlanetSizeMin() {
+		return planetSizeMin;
+	}
+	public int getPlanetSizeMax() {
+		return planetSizeMax;
+	}
+	public int getPlanetTypeWaterMin() {
+		return planetTypeWaterMin;
+	}
+	public int getPlanetTypeGasMin() {
+		return planetTypeGasMin;
 	}
 }

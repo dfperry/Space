@@ -6,6 +6,8 @@ import java.util.Random;
 
 import com.dperry.space.model.space.Planet;
 import com.dperry.space.model.space.PlanetPlot;
+import com.dperry.space.model.space.PlanetType;
+import com.dperry.space.model.space.PlotType;
 
 public class PlanetFactory {
 

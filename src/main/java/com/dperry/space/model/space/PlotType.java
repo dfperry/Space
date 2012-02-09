@@ -1,4 +1,4 @@
-package com.dperry.space.genesis;
+package com.dperry.space.model.space;
 
 public enum PlotType {
 	LAND("land"),

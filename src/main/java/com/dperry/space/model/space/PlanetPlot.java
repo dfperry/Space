@@ -1,6 +1,5 @@
 package com.dperry.space.model.space;
 
-import com.dperry.space.genesis.PlotType;
 
 public class PlanetPlot {
 

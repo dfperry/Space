@@ -15,6 +15,33 @@
 
 	<context:annotation-config />
 	<context:component-scan base-package="com.dperry.space" />
+	
+	<context:property-placeholder location="classpath:creator.properties"/>
+
+	<bean id="planetFactory" class="com.dperry.space.genesis.PlanetFactory">
+		<property name="gridHeight" 		value="${grid.height}" />
+		<property name="gridWidth" 			value="${grid.width}" />
+		<property name="planetOreMax" 		value="${planet.ore.max}" />
+		<property name="planetOreMin" 		value="${planet.ore.min}" />
+		<property name="planetSizeMax" 		value="${planet.size.max}" />
+		<property name="planetSizeMin" 		value="${planet.size.min}" />
+		<property name="planetTypeGasMin" 	value="${planet.type.gas.min}" />
+		<property name="planetTypeWaterMin"	value="${planet.type.water.min}" />
+		<property name="planetWaterMax" 	value="${planet.water.max}" />
+		<property name="planetWaterMin" 	value="${planet.water.min}" />
+	</bean>
+	
+	<bean id="solarSystemFactory" class="com.dperry.space.genesis.SolarSystemFactory">
+		
+	</bean>
+	
+	<bean id="galaxyFactory" class="com.dperry.space.genesis.GalaxyFactory">
+	
+	</bean>
+	
+	<bean id="universeFactory" class="com.dperry.space.genesis.UniverseFactory">
+	
+	</bean>
 
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
