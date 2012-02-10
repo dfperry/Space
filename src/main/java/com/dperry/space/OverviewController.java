@@ -3,6 +3,7 @@ package com.dperry.space;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,8 +67,8 @@ public class OverviewController {
 		SolarSystem solarSystem = new SolarSystem();
 		
 		List<Planet> planets = new ArrayList<Planet>();
-		
-		for( int i = 0; i < 10; i++ ) {
+		int loop = new Random().nextInt( 10 );
+		for( int i = 0; i < loop; i++ ) {
 			planets.add( planetFactory.createPlanet() );
 		}
 		

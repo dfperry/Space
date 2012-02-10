@@ -56,6 +56,7 @@ public class PlanetFactory {
 	
 	public Planet generateTerrain( Planet planet ) {
 		
+		planet.setExplored( true );
 		generatePlots( planet );
 		
 		if( planet.getPlanetType() == PlanetType.LAND ) {

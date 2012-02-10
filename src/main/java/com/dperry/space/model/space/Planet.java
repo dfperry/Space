@@ -11,6 +11,8 @@ public class Planet extends SpaceObject {
 	
 	List<PlanetPlot> planetPlots;
 	
+	boolean isExplored = false;
+	
 	public Planet() {
 		
 	}
@@ -55,5 +57,11 @@ public class Planet extends SpaceObject {
 	}
 	public void setPlanetType( PlanetType planetType ) {
 		this.planetType = planetType;
+	}
+	public boolean isExplored() {
+		return isExplored;
+	}
+	public void setExplored( boolean isExplored ) {
+		this.isExplored = isExplored;
 	}
 }
