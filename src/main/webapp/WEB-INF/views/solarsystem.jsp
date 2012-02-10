@@ -3,12 +3,24 @@
 <html>
 <head>
 	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="../resources/css/style.css" />
 </head>
 <body>
 <h1>
-	Hello space!  
+	Solar System  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<div id="solarSystem" class="grid">
+		<div class="star">
+			&nbsp;
+		</div>
+	<c:forEach var="planet" items="${solarSystem.planets}">
+		<div class="planet ${planet.planetType.description }" style="left:${planet.x}px; top:${planet.y}px;">
+			&nbsp;
+		</div>
+	</c:forEach>
+	
+</div>
+
 </body>
 </html>

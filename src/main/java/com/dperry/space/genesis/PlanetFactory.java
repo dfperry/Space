@@ -50,7 +50,12 @@ public class PlanetFactory {
 		if( planet.getSize() > planetTypeGasMin && random.nextBoolean() && random.nextBoolean() ) {
 			planet.setPlanetType( PlanetType.GAS );
 		}
-
+		
+		return planet;
+	}
+	
+	public Planet generateTerrain( Planet planet ) {
+		
 		generatePlots( planet );
 		
 		if( planet.getPlanetType() == PlanetType.LAND ) {
@@ -69,7 +74,7 @@ public class PlanetFactory {
 				break;
 		}
 		generateOre( planet );
-
+		
 		return planet;
 	}
 	

@@ -16,6 +16,34 @@ div.plot {
 	height: 15px;
 }
 
+div.grid {
+	width: 620px;
+	height: 420px;
+	padding: 10px;
+	border: 3px solid #333333;
+	background-color: #000022;
+	position: relative;
+}
+
+div.planet {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	color: #cccccc;
+	border: 1px solid #cccccc;
+}
+
+div.star {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 190px;
+	left: 290px;
+	color: #ffcc00;
+	background-color: #ffcc00;
+	border: 1px solid #ffcc00;
+}
+
 div.water {
 	background-color: #6688aa;
 }

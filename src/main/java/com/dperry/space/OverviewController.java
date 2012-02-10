@@ -1,5 +1,7 @@
 package com.dperry.space;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.dperry.space.genesis.PlanetFactory;
 import com.dperry.space.model.space.Planet;
+import com.dperry.space.model.space.SolarSystem;
 
 /**
  * Handles requests for the application home page.
@@ -45,6 +48,34 @@ public class OverviewController {
 		model.addAttribute( "planet", planet );
 		
 		return "planet";
+	}
+	
+	@RequestMapping("solarsystemtest")
+	public String viewSolarSystem( Model model ) {
+		
+		PlanetFactory planetFactory = new PlanetFactory();
+		planetFactory.setPlanetSizeMin( 10 );
+		planetFactory.setPlanetSizeMax( 50 );
+		planetFactory.setGridHeight( 400 );
+		planetFactory.setGridWidth( 600 );
+		planetFactory.setPlanetTypeGasMin( 35 );
+		planetFactory.setPlanetTypeWaterMin( 20 );
+		planetFactory.setPlanetOreMin( 50 );
+		planetFactory.setPlanetOreMax( 500 );
+		
+		SolarSystem solarSystem = new SolarSystem();
+		
+		List<Planet> planets = new ArrayList<Planet>();
+		
+		for( int i = 0; i < 10; i++ ) {
+			planets.add( planetFactory.createPlanet() );
+		}
+		
+		solarSystem.setPlanets( planets );
+		
+		model.addAttribute( "solarSystem", solarSystem );
+		
+		return "solarsystem";
 	}
 	
 }

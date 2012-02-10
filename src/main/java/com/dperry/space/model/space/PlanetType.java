@@ -16,6 +16,10 @@ public enum PlanetType {
 		return description;
 	}
 	
+	public String getDescription() {
+		return description;
+	}
+	
 	public static PlanetType byValue( String description ) {
 		for( PlanetType planetType : PlanetType.values() ) {
 			if( planetType.toString().equals( description ) ) {
