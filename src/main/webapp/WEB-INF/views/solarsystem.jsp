@@ -15,7 +15,12 @@
 			&nbsp;
 		</div>
 	<c:forEach var="planet" items="${solarSystem.planets}">
-		<div class="planet ${planet.planetType.description }" style="left:${planet.x}px; top:${planet.y}px;">
+		<div class="planet " 
+			style="left:${planet.x}px; top:${planet.y}px; height: ${planet.size}px; width: ${planet.size}px;">
+			<img alt="${planet.planetType.description}" 
+				 src="../resources/images/${planet.planetType.description}.png"
+				 height="${planet.size}px"
+				 width="${planet.size}px"/>
 			&nbsp;
 		</div>
 	</c:forEach>

@@ -30,18 +30,16 @@ div.planet {
 	height: 20px;
 	position: absolute;
 	color: #cccccc;
-	border: 1px solid #cccccc;
 }
 
 div.star {
-	width: 20px;
-	height: 20px;
+	width: 73px;
+	height: 72px;
 	position: absolute;
-	top: 190px;
-	left: 290px;
+	top: 162px;
+	left: 261px;
 	color: #ffcc00;
-	background-color: #ffcc00;
-	border: 1px solid #ffcc00;
+	background: url("../images/star.png") no-repeat center;
 }
 
 div.water {
