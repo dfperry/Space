@@ -37,6 +37,8 @@ public class OverviewController {
 		planetFactory.setGridWidth( 600 );
 		planetFactory.setPlanetTypeGasMin( 35 );
 		planetFactory.setPlanetTypeWaterMin( 20 );
+		planetFactory.setPlanetOreMin( 50 );
+		planetFactory.setPlanetOreMax( 500 );
 		
 		Planet planet = planetFactory.createPlanet();
 		

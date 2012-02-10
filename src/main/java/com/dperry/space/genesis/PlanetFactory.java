@@ -57,6 +57,17 @@ public class PlanetFactory {
 			generateOcean( planet );
 		}
 		
+		switch( planet.getPlanetType() ) {
+			case LAND:
+			case ROCK:
+				generateOre( planet );
+				break;
+				
+			case WATER:
+			case GAS:
+				// do nothing
+				break;
+		}
 		generateOre( planet );
 
 		return planet;
@@ -95,7 +106,73 @@ public class PlanetFactory {
 	}
 	
 	public void generateOre( Planet planet ) {
-		
+		int width = planet.getSize() * 2;
+		int height = planet.getSize();
+		boolean[][] ore = new boolean[height][width];
+		boolean[][] ore2 = new boolean[height][width];
+
+		// fill with random
+
+		for( int i = 0; i < height; i++ ) {
+			for( int j = 0; j < width; j++ ) {
+				ore[i][j] = random.nextBoolean();
+//				ore[i][j] = (random.nextInt( 100 ) < 5);
+			}
+		}
+
+		int r1_cutoff = 6;
+		int r2_cutoff = 2;
+
+		// clean up for a few generations
+
+		for( int g = 0; g < 2; g++ ) {
+			int xi, yi, ii, jj;
+			for( yi = 1; yi < height - 1; yi++ )
+				for( xi = 1; xi < width - 1; xi++ ) {
+					int adjcount_r1 = 0, adjcount_r2 = 0;
+
+					for( ii = -1; ii <= 1; ii++ ) {
+						for( jj = -1; jj <= 1; jj++ ) {
+							if( ore[yi + ii][xi + jj] )
+								adjcount_r1++;
+						}
+					}
+					for( ii = yi - 2; ii <= yi + 2; ii++ ) {
+						for( jj = xi - 2; jj <= xi + 2; jj++ ) {
+							if( Math.abs( ii - yi ) == 2 && Math.abs( jj - xi ) == 2 )
+								continue;
+							if( ii < 0 || jj < 0 || ii >= height || jj >= width )
+								continue;
+							if( !ore[ii][jj] )
+								adjcount_r2++;
+						}
+					}
+					if( adjcount_r1 >= r1_cutoff || adjcount_r2 <= r2_cutoff )
+						ore2[yi][xi] = false;
+					else
+						ore2[yi][xi] = true;
+				}
+			for( yi = 1; yi < height - 1; yi++ ) {
+				for( xi = 1; xi < width - 1; xi++ ) {
+					ore[yi][xi] = ore2[yi][xi];
+				}
+			}
+		}
+
+		// set water on plots
+		for( int i = 0; i < height; i++ ) {
+			for( int j = 0; j < width; j++ ) {
+				if( ore[i][j] ) {
+					switch( planet.getPlanetPlot(j,i).getPlotType() ) {
+						case LAND:
+						case ROCK:
+							int oreCount = random.nextInt( planetOreMax - planetOreMin + 1 ) + planetOreMin;
+							planet.getPlanetPlot( j, i ).setOreCount( oreCount );
+							break;
+					}
+				}
+			}
+		}
 	}
 	
 	public void generateOcean( Planet planet ) {
@@ -154,7 +231,7 @@ public class PlanetFactory {
 		// set water on plots
 		for( int i = 0; i < height; i++ ) {
 			for( int j = 0; j < width; j++ ) {
-				if( ocean[i][j] ) {
+				if( !ocean[i][j] ) {
 					planet.getPlanetPlot( j, i ).setPlotType( PlotType.WATER );
 				}
 			}

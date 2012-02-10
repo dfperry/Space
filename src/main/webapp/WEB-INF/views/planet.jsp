@@ -31,7 +31,7 @@
 				
 				<td>
 					<div class="plot <%= plot.getPlotType().toString() %><%=random.nextInt(4) %>" >
-						&nbsp;
+						<%=plot.getOreCount() > 0 ? "o" : "" %>
 					</div>
 				</td>
 				
