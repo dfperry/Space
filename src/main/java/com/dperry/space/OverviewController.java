@@ -79,4 +79,10 @@ public class OverviewController {
 		return "solarsystem";
 	}
 	
+	@RequestMapping("galaxytest")
+	public String viewGalaxy( Model model ) {
+		
+		return "galaxy";
+	}
+	
 }
