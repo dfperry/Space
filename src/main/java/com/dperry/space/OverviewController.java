@@ -46,6 +46,8 @@ public class OverviewController {
 		
 		Planet planet = planetFactory.createPlanet();
 		
+		planetFactory.generateTerrain( planet );
+		
 		model.addAttribute( "planet", planet );
 		
 		return "planet";
